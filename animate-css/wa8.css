@@ -1,0 +1,96 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: skyblue;
+}
+h1{
+    font-family: Helvetica, sans-serif;
+    color: rgb(27, 97, 140);
+}
+nav{
+    height: 50vh;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height:20px;
+    background-color: yellow;
+}
+nav a{
+    width:10vw;
+    text-align: center;
+    text-decoration: none;
+    color:black;
+    
+    font-family: Helvetica, sans-serif;
+}
+.container{
+    display:flex;
+    justify-content: left;
+}
+/* left beach balls */
+.left-border{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    animation: pulse 2s infinite;
+}
+.left-border img{
+    max-width: 30%;
+    padding: 0;
+    margin: 0;
+    float: right;
+    margin-left:auto;
+}
+/* right beach balls */
+.right-border{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    animation: pulse 2s infinite;
+}
+.right-border img{
+    max-width: 30%;
+    padding: 0;
+    margin: 0;
+}
+
+img{
+   max-width: 60%;
+   padding-top: 10px;
+}
+
+#red-ball{
+    background-color: orange;
+    width: 20px;
+    height:20px;
+    border-radius: 50%;
+    position: absolute;
+    left:5vw;
+    top:0;
+}
+#red-ball:hover{
+    width:80px;
+    height:80px;
+}
+@keyframes pulse {
+    0% {
+     transform: scale(1, 1);
+    }
+
+    50% {
+     transform: scale(1.1, 1.1);
+    }
+
+    100% {
+    transform: scale(1, 1);
+    }
+}
+  
+  h1:hover {
+    transform: scale(2);
+  }
+  
+  a:hover {
+    transform: scale(1.5);
+  }
