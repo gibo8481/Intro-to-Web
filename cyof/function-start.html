@@ -45,16 +45,6 @@
       
 
     <script>
-    //   function userInput(){
-    //     let txt = prompt("Enter a message!");
-    //     return(text);
-    //   }
-        const btn = document.querySelector("button");
-        btn.addEventListener("click", () =>
-        displayMessage("Your inbox is almost full — delete some mails", "warning")
-        // // displayMessage("Brian: Hi there, how are you today?", "chat")
-        // displayMessage(userInput())
-                );
 
 
       function displayMessage(msgText, msgType){
@@ -91,7 +81,18 @@
 
       }
 
-    //   displayMessage();
+      function userInput(){
+        let txt = prompt("Enter a message!");
+        return(txt);
+      }
+    
+        const btn = document.querySelector("button");
+        btn.addEventListener("click", () =>
+        // displayMessage("Your inbox is almost full — delete some mails", "warning")
+        displayMessage(userInput(), "chat")
+        // displayMessage(userInput())
+                );
+
     </script>
   </body>
 </html>
