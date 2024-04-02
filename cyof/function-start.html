@@ -85,11 +85,15 @@
         let txt = prompt("Enter a message!");
         return(txt);
       }
+      function userMsg(){
+        let txt = prompt("Is this a warning or chat?")
+        return(txt);
+    }
     
         const btn = document.querySelector("button");
         btn.addEventListener("click", () =>
         // displayMessage("Your inbox is almost full — delete some mails", "warning")
-        displayMessage(userInput(), "chat")
+        displayMessage(userInput(), userMsg())
         // displayMessage(userInput())
                 );
 
