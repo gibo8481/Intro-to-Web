@@ -19,14 +19,45 @@ const alts = {
 
 /* Looping through images */
 for(const i of imgs){
-    const newImg = document.createElement('img');
-    newImg.setAttribute('src',)
+
+// construct src path and alt text
+const src = `images/${i}`;
+const nalt = alts[i]; // matching each images filename to its corresponding text
+
+// create new img element for the thumbnail
+const newImage = document.createElement('img'); 
+// set source and alt text of thumbnail img
+newImage.setAttribute('src', src);
+newImage.setAttribute('alt', nalt);
+// append thumbnail img to thumbar container
+thumbBar.appendChild(newImage);
+
+// change displayed image when thumbnail is clicked
+newImage.addEventListener('click', () => {
+    displayedImage.setAttribute('src', src);
+    displayedImage.setAttribute('alt', nalt);
+})
+
 }
 
-const newImage = document.createElement('img');
-newImage.setAttribute('src', xxx);
-newImage.setAttribute('alt', xxx);
-thumbBar.appendChild(newImage);
+// const newImage = document.createElement('img');
+// newImage.setAttribute('src', xxx);
+// newImage.setAttribute('alt', xxx);
+// thumbBar.appendChild(newImage);
 
 
 /* Wiring up the Darken/Lighten button */
+
+btn.addEventListener('click', () =>{
+    const btnClass = btn.getAttribute('class');
+    // curr class of btn
+    if (btnClass === 'dark') {
+        btn.setAttribute('class','light');
+        btn.textContent = 'Lighten';
+        overlay.style.backgroundColor = 'rgba(0,0,0,0.5)';
+      } else {
+        btn.setAttribute('class','dark');
+        btn.textContent = 'Darken';
+        overlay.style.backgroundColor = 'rgba(0,0,0,0)';
+      }
+})
