@@ -96,8 +96,12 @@
         return(txt);
       }
       function userMsg(){
-        let txt = prompt("Is this a warning or chat?")
+        do{
+          var txt = prompt("Is this a warning or chat?").toLowerCase();
+        } while(txt !== "warning" && txt !== "chat");
+
         return(txt);
+
     }
     
         const btn = document.querySelector("button");
