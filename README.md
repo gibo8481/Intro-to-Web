@@ -3,6 +3,6 @@ As a TA for ATLS 2200, I lead recitations, grade, and answer student questions r
 ## Weekly Assignments 
 * [Animate Something](https://gibo8481.github.io/Intro-to-Web/animate-something/wa8.html)
 * [Silly Story](https://gibo8481.github.io/Intro-to-Web/silly-story/wa10.html)
-* [Image Carousel](https://gibo8481.github.io/Intro-to-Web/image-carousel/wa11.html)
+* [Image Carousel](https://gibo8481.github.io/Intro-to-Web/image-carousel/gallery-start/wa11.html)
 ## In Class Assignments
 * [CYOF](https://gibo8481.github.io/Intro-to-Web/cyof/function-start.html)
