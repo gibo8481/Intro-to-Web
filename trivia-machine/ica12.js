@@ -1,44 +1,50 @@
+// Select the buttons for fetching a new trivia question and for showing the answer.
 const buttonQ = document.querySelector('#js-new-quote');
-// console.log(button);
-const btnClickQ = buttonQ.addEventListener('click', getTrivia); 
-// look for a click, what we want it to do when the user clicks on the button
-// expecting newTrivia to be a function
 const buttonA = document.querySelector('#js-answer-btn');
-const btnClickA = buttonA.addEventListener('click', getAnswer);
 
-const endpoint = "https://trivia.cyberwisp.com/getrandomchristmasquestion"; // variable that holds the endpoint
-// key of question
-// key of answer
+// Define the endpoint URL from which to fetch trivia questions.
+const endpoint = "https://api.gameofthronesquotes.xyz/v1/randoms";
 
-var jsonData = '';
+// Initialize jsonData to hold the response from the fetch operation.
+let jsonData = '';
 
-async function getTrivia(){ 
-    //console.log("button pressed!");
+// Function to fetch a new trivia question and display it.
+async function getTrivia() {
+    // Clear any existing answer text.
     const answerArea = document.querySelector('#js-answer-text');
     answerArea.textContent = '';
 
-    try{
-        var response = await fetch(endpoint);
-        if(!response.ok)
-        {
-            throw Error(response.statusText);
+    try {
+        const response = await fetch(endpoint);
+        if (!response.ok) {
+            throw Error('The service to fetch a new trivia question is currently unavailable. Please try again later.');
         }
-      // use fetch to get a new question, if successful, change webpage else output error
-        jsonData = await response.json();
 
-        const quoteText = jsonData['question'];
+        jsonData = await response.json();
+        const quoteText = jsonData['sentence'];
+        console.log('here is your data', quoteText)
         const quoteArea = document.querySelector('#js-quote-text');
         quoteArea.textContent = quoteText;
-    }
-    catch(err){
-        console.log(err);
-        alert('failed');
+    } catch (err) {
+        // Update the webpage to inform the user more gently about the error.
+        const errorArea = document.querySelector('#js-quote-text');
+        errorArea.textContent = err.message;
     }
 }
 
-function getAnswer(){
+// Function to display the answer to the current trivia question.
+// function getAnswer() {
+//     if (!jsonData || !jsonData['answer']) {
+//         const answerArea = document.querySelector('#js-answer-text');
+//         answerArea.textContent = 'No answer available. Please fetch a new trivia question first.';
+//         return;
+//     }
 
-    const answerText = jsonData['answer'];
-    const answerArea = document.querySelector('#js-answer-text');
-    answerArea.textContent = answerText;
-}
+//     const answerText = jsonData['answer'];
+//     const answerArea = document.querySelector('#js-answer-text');
+//     answerArea.textContent = answerText;
+// }
+
+// Attach event listeners to buttons for fetching trivia and showing answers.
+buttonQ.addEventListener('click', getTrivia);
+// buttonA.addEventListener('click', getAnswer);

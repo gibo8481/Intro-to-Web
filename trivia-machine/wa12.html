@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="wa12.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="app">
+        <header>Random Cat Facts</header>
+        <section class="quotes">
+          <div class="quote-text" id="js-quote-text"></div>
+          <div class="quote-text" id="js-answer-text"></div>
+        </section>
+        <section class="controls" >
+          <button type="button" id="js-new-quote" class="new-quote button">
+            Generate a new fact!
+          </button>
+          <button type="button" id="show-image-button">Fetch me a cat!</button>
+          <img id="my-image" src="https://cataas.com/cat" style="display: none; width:300px; height:auto">
+      
+        </section>
+
+      </div>
+      <p>*This API generates random cat facts and fetches a funny cat image. To get a different cat image, refresh the page and press the button again.*</p>
+      <script src="wa12.js"></script>
+</body>
+</html>
